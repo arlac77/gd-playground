@@ -5,48 +5,52 @@
 const levelup = require('levelup'),
   levelws = require('level-ws');
 
+const w = true;
 
-const db = levelws(levelup('./mydb'));
+if (w) {
+  const db = levelws(levelup('./mydb'));
 
-const ws = db.createWriteStream({
-  //keyEncoding: 'binary',
-  valueEncoding: 'utf8'
-});
-
-ws.on('error', err => {
-  console.log('Oh my!', err);
-});
-ws.on('close', () => {
-  console.log('Stream closed');
-});
-
-
-//for (let i = 0; i < 1000000; i++) {
-/*
-  var buffer = new ArrayBuffer(4);
-  var int32View = new Int32Array(buffer);
-  int32View[0] = 0;
-*/
-/*
-  ws.write({
-    key: i,
-    value: `Yuri Irsenovich Kim ${i}`
+  const ws = db.createWriteStream({
+    keyEncoding: 'binary',
+    valueEncoding: 'utf8'
   });
+
+  ws.on('error', err => console.log('Oh my!', err));
+  ws.on('close', () => console.log('Stream closed'));
+
+  const chunkSize = 1000000;
+  let b0 = new Buffer(4 * chunkSize);
+  let start = 0;
+
+  for (let i = 0; i < 10000000; i++) {
+    const b = b0.slice(start, start + 4);
+    start += 4;
+
+    if (start >= chunkSize) {
+      start = 0;
+      b0 = new Buffer(4 * chunkSize);
+    }
+
+    b.writeInt32BE(i);
+    if (i % 1000000 === 0) {
+      console.log(i);
+    }
+    ws.write({
+      key: b,
+      value: `Yuri Irsenovich Kim ${i}`
+    });
+  }
+
+  ws.end();
+  console.log('end called...');
+} else {
+  const db = levelup('./mydb');
+
+  db.createReadStream({
+      keyEncoding: 'binary'
+    })
+    .on('data', data => console.log(data.key.readInt32BE(0), '=', data.value))
+    .on('error', err => console.log('Oh my!', err))
+    .on('close', () => console.log('Stream closed'))
+    .on('end', () => console.log('Stream closed'));
 }
-
-ws.end();
-*/
-
-/*
-var buffer = new ArrayBuffer(4);
-var int32View = new Int32Array(buffer);
-int32View[0] = 100;
-*/
-
-let i = 16;
-
-db.get(i, (err, value) => {
-  if (err) return console.log('Ooops!', err);
-
-  console.log(`${i}=${value}`);
-});
