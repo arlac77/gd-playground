@@ -1,21 +1,21 @@
 /* jslint node: true, esnext: true */
-"use strict";
+'use strict';
 
 
 const levelup = require('levelup'),
   levelws = require('level-ws');
 
-const w = false;
+const w = true;
 
 if (w) {
-  const db = levelws(levelup('./mydb'));
+  const db = levelws(levelup('./my.levelup'));
 
   const ws = db.createWriteStream({
     keyEncoding: 'binary',
     valueEncoding: 'utf8'
   });
 
-  ws.on('error', err => console.log('Oh my!', err));
+  ws.on('error', err => console.error('Oh my!', err));
   ws.on('close', () => console.log('Stream closed'));
 
   const version = 6;
@@ -48,13 +48,13 @@ if (w) {
   ws.end();
   console.log('end called...');
 } else {
-  const db = levelup('./mydb');
+  const db = levelup('./my.levelup');
 
   db.createReadStream({
       keyEncoding: 'binary'
     })
     .on('data', data => console.log(data.key.readInt32BE(0), data.key.readInt32BE(1), data.value))
-    .on('error', err => console.log('Oh my!', err))
+    .on('error', err => console.error('Oh my!', err))
     .on('close', () => console.log('Stream closed'))
     .on('end', () => console.log('Stream closed'));
 }
