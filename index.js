@@ -5,7 +5,7 @@
 const levelup = require('levelup'),
   levelws = require('level-ws');
 
-const w = true;
+const w = false;
 
 if (w) {
   const db = levelws(levelup('./my.levelup'));
@@ -24,7 +24,7 @@ if (w) {
   let b0 = new Buffer(keyLength * chunkSize);
   let start = 0;
 
-  for (let i = 0; i < 10000000; i++) {
+  for (let i = 0; i < 1000000; i++) {
     const b = b0.slice(start, start + keyLength);
     start += keyLength;
 
@@ -36,7 +36,7 @@ if (w) {
     b.writeInt32BE(i);
     b.writeInt32BE(version, 1);
 
-    if (i % 1000000 === 0) {
+    if (i % 100000 === 0) {
       console.log(i);
     }
     ws.write({
