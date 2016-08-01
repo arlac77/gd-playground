@@ -5,10 +5,16 @@
 const levelup = require('levelup'),
   levelws = require('level-ws');
 
+
+const NUMBER_OF_ENTRIES = 1000000;
+const REPORT_NUMBER = 10000;
+
+const mydb = levelup('./my.levelup');
+
 const w = false;
 
 if (w) {
-  const db = levelws(levelup('./my.levelup'));
+  const db = levelws(mydb);
 
   const ws = db.createWriteStream({
     keyEncoding: 'binary',
@@ -19,12 +25,12 @@ if (w) {
   ws.on('close', () => console.log('Stream closed'));
 
   const version = 6;
-  const chunkSize = 1000000;
+  const chunkSize = 1000;
   const keyLength = 4 + 4;
   let b0 = new Buffer(keyLength * chunkSize);
   let start = 0;
 
-  for (let i = 0; i < 1000000; i++) {
+  for (let i = 0; i < NUMBER_OF_ENTRIES; i++) {
     const b = b0.slice(start, start + keyLength);
     start += keyLength;
 
@@ -36,22 +42,22 @@ if (w) {
     b.writeInt32BE(i);
     b.writeInt32BE(version, 1);
 
-    if (i % 100000 === 0) {
+    if (i % REPORT_NUMBER === 0) {
       console.log(i);
     }
+
     ws.write({
       key: b,
-      value: `Yuri Irsenovich Kim ${i} ${version}`
+      value: `Name ${i} ${version}`
     });
   }
 
   ws.end();
   console.log('end called...');
 } else {
-  const db = levelup('./my.levelup');
-
-  db.createReadStream({
-      keyEncoding: 'binary'
+  mydb.createReadStream({
+      keyEncoding: 'binary',
+      valueEncoding: 'utf8'
     })
     .on('data', data => console.log(data.key.readInt32BE(0), data.key.readInt32BE(1), data.value))
     .on('error', err => console.error('Oh my!', err))
