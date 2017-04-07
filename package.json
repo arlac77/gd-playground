@@ -19,7 +19,7 @@
   "homepage": "https://github.com/arlac77/gd-playground#readme",
   "dependencies": {
     "hdt": "^1.4.0",
-    "level-ws": "0.0.1",
+    "level-ws": "0.1.0",
     "leveldown": "^1.6.0",
     "levelup": "^1.3.5"
   },
