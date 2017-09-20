@@ -44,5 +44,10 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "template": {
+    "repository": {
+      "url": "https://github.com/arlac77/gd-playground.git"
+    }
   }
 }
