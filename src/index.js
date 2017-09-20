@@ -1,9 +1,5 @@
-/* jslint node: true, esnext: true */
-'use strict';
-
 const levelup = require('levelup'),
   levelws = require('level-ws');
-
 
 const NUMBER_OF_ENTRIES = 100000;
 const REPORT_NUMBER = 10000;
@@ -62,9 +58,7 @@ if (w) {
   buf.writeInt32BE(100000, 0);
   buf.writeInt32BE(0, 0);
 
-  mydb.get(buf, (error, data) => {
-    console.log(data);
-  });
+  mydb.get(buf, (error, data) => console.log(data));
 
   /*
     mydb.createReadStream({
