@@ -29,12 +29,12 @@
     "levelup": "^2.0.0"
   },
   "devDependencies": {
-    "semantic-release": "^8.2.0",
+    "semantic-release": "^8.2.1",
     "jsdoc-to-markdown": "^3.0.0",
     "jsdoc-babel": "^0.3.0",
     "markdown-doctest": "^0.9.1",
-    "nyc": "^11.2.1",
-    "ava": "^0.22.0",
+    "nyc": "^11.3.0",
+    "ava": "^0.23.0",
     "rollup": "^0.50.0",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-multi-entry": "^2.0.1",
@@ -48,7 +48,7 @@
   ],
   "license": "BSD-2-Clause",
   "engines": {
-    "node": ">=8.6.0"
+    "node": ">=8.7.0"
   },
   "main": "dist/index.js",
   "module": "src/index.js",
