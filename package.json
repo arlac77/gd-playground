@@ -29,7 +29,7 @@
     "levelup": "^2.0.0"
   },
   "devDependencies": {
-    "semantic-release": "^8.2.1",
+    "semantic-release": "^8.2.2",
     "jsdoc-to-markdown": "^3.0.0",
     "jsdoc-babel": "^0.3.0",
     "markdown-doctest": "^0.9.1",
@@ -48,7 +48,7 @@
   ],
   "license": "BSD-2-Clause",
   "engines": {
-    "node": ">=8.7.0"
+    "node": ">=8.8.1"
   },
   "main": "dist/index.js",
   "module": "src/index.js",
