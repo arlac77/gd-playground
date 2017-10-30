@@ -7,7 +7,7 @@
     "cover": "nyc ava",
     "doc": "jsdoc lib/*.js",
     "test": "ava",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "semantic-release": "semantic-release",
     "precover": "rollup -c tests/rollup.config.js",
     "pretest": "rollup -c tests/rollup.config.js",
     "posttest": "npm run prepare && markdown-doctest",
@@ -29,7 +29,7 @@
     "levelup": "^2.0.0"
   },
   "devDependencies": {
-    "semantic-release": "^8.2.2",
+    "semantic-release": "^9.1.0",
     "jsdoc-to-markdown": "^3.0.0",
     "jsdoc-babel": "^0.3.0",
     "markdown-doctest": "^0.9.1",
