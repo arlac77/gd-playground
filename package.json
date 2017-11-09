@@ -4,7 +4,7 @@
   "description": "graph data playground",
   "keywords": [],
   "scripts": {
-    "cover": "nyc ava",
+    "cover": "nyc --temp-directory build/nyc ava",
     "doc": "jsdoc lib/*.js",
     "test": "ava",
     "semantic-release": "semantic-release",
