@@ -25,7 +25,7 @@
     "lint": "documentation lint src/index.js"
   },
   "dependencies": {
-    "hdt": "^2.0.0",
+    "hdt": "^2.0.1",
     "level-ws": "0.1.0",
     "leveldown": "^2.1.0",
     "levelup": "^2.0.0"
