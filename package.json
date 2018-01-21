@@ -26,7 +26,7 @@
     "travis-deploy-once": "travis-deploy-once"
   },
   "dependencies": {
-    "hdt": "^2.0.1",
+    "hdt": "^2.0.2",
     "level-ws": "0.1.0",
     "leveldown": "^2.1.0",
     "levelup": "^2.0.0"
