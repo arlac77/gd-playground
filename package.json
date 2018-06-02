@@ -1,6 +1,9 @@
 {
   "name": "gd-playground",
   "version": "0.0.0-semantic-release",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/index.js",
   "module": "src/index.js",
   "description": "graph data playground",
