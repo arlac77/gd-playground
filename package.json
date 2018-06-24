@@ -32,7 +32,7 @@
     "hdt": "^2.1.0",
     "level-ws": "0.1.0",
     "leveldown": "^4.0.0",
-    "levelup": "^2.0.2"
+    "levelup": "^3.1.0"
   },
   "devDependencies": {
     "semantic-release": "^15.6.0",
