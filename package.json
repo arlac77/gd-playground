@@ -61,17 +61,16 @@
   "homepage": "https://github.com/arlac77/gd-playground#readme",
   "ava": {
     "files": [
-      "build/test-bundle.js"
+      "tests/*-test.js"
     ],
     "presets": [
       "stage-3"
     ],
     "require": [
-      "babel-register"
-    ]
-  },
-  "xo": {
-    "space": true
+      "esm"
+    ],
+    "babel": false,
+    "compileEnhancements": false
   },
   "template": {
     "repository": {
