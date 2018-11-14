@@ -61,7 +61,8 @@
   "homepage": "https://github.com/arlac77/gd-playground#readme",
   "ava": {
     "files": [
-      "tests/*-test.js"
+      "tests/*-test.js",
+      "tests/*-test.mjs"
     ],
     "presets": [
       "stage-3"
