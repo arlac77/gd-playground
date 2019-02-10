@@ -1,4 +1,4 @@
-const hdt = require('hdt');
+import { fromFile}  from 'hdt';
 
 hdt.fromFile('./node_modules/hdt/test/test.hdt', (error, hdtDocument) => {
   hdtDocument.searchTriples(

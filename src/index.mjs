@@ -1,5 +1,5 @@
-const levelup = require('levelup'),
-  levelws = require('level-ws');
+import levelup from 'levelup';
+import levelws from 'level-ws';
 
 const NUMBER_OF_ENTRIES = 100000;
 const REPORT_NUMBER = 10000;
