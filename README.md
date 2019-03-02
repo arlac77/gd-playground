@@ -4,7 +4,6 @@
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Build Status](https://secure.travis-ci.org/arlac77/gd-playground.png)](http://travis-ci.org/arlac77/gd-playground)
 [![codecov.io](http://codecov.io/github/arlac77/gd-playground/coverage.svg?branch=master)](http://codecov.io/github/arlac77/gd-playground?branch=master)
-[![Coverage Status](https://coveralls.io/repos/arlac77/gd-playground/badge.svg)](https://coveralls.io/r/arlac77/gd-playground)
 [![Known Vulnerabilities](https://snyk.io/test/github/arlac77/gd-playground/badge.svg)](https://snyk.io/test/github/arlac77/gd-playground)
 [![GitHub Issues](https://img.shields.io/github/issues/arlac77/gd-playground.svg?style=flat-square)](https://github.com/arlac77/gd-playground/issues)
 [![Stories in Ready](https://badge.waffle.io/arlac77/gd-playground.svg?label=ready&title=Ready)](http://waffle.io/arlac77/gd-playground)
