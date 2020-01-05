@@ -9,7 +9,6 @@
   "main": "src/index.mjs",
   "module": "src/index.mjs",
   "description": "graph data playground",
-  "keywords": [],
   "contributors": [
     {
       "name": "Markus Felten",
