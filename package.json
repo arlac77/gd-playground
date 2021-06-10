@@ -27,7 +27,7 @@
     "hdt": "^2.1.0",
     "level-ws": "0.1.0",
     "leveldown": "^4.0.0",
-    "levelup": "^3.1.0"
+    "levelup": "^5.0.1"
   },
   "devDependencies": {
     "ava": "^2.4.0",
