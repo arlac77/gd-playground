@@ -24,7 +24,7 @@
     "test": "ava"
   },
   "dependencies": {
-    "hdt": "^2.1.0",
+    "hdt": "^3.0.2",
     "level-ws": "0.1.0",
     "leveldown": "^6.1.0",
     "levelup": "^5.1.1"
